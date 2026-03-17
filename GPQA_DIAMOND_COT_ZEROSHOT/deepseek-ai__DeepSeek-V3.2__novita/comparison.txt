@@ -1,0 +1,29 @@
+************************************JAILBREAK(8000 CONTEXT)***********************************
+openai-chat-completions ({'model': 'deepseek-ai/DeepSeek-V3.2:novita', 'base_url': 'https://router.huggingface.co/v1/chat/completions', 'num_concurrent': 3, 'eos_string': '<|end_of_sentence|>', 'max_length': 8192}), gen_kwargs: ({}), limit: None, num_fewshot: None, batch_size: 1
+|          Tasks          |Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------------|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gpqa_diamond_cot_zeroshot|      1|flexible-extract|     0|exact_match|↑  |0.3636|±  |0.0343|
+|                         |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
+
+************************************JAILBREAK(thinking_30000 CONTEXT)***********************************
+2026-03-12:15:13:57 INFO     [loggers.evaluation_tracker:247] Saving results aggregated
+openai-chat-completions ({'model': 'deepseek-ai/DeepSeek-V3.2:novita', 'base_url': 'https://router.huggingface.co/v1/chat/completions', 'num_concurrent': 3, 'max_length': 30000, 'extra_body': {'chat_template_kwargs': {'thinking': True}}}), gen_kwargs: ({}), limit: None, num_fewshot: None, batch_size: 1
+|          Tasks          |Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------------|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gpqa_diamond_cot_zeroshot|      1|flexible-extract|     0|exact_match|↑  |0.4242|±  |0.0352|
+|                         |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
+
+
+************************************normal(thinking_8192 CONTEXT)***********************************
+openai-chat-completions ({'model': 'deepseek-ai/DeepSeek-V3.2:novita', 'base_url': 'https://router.huggingface.co/v1/chat/completions', 'num_concurrent': 3, 'max_length': 8192, 'temperature': 0.0, 'extra_body': {'chat_template_kwargs': {'thinking': True}}}), gen_kwargs: ({}), limit: None, num_fewshot: None, batch_size: 1
+|          Tasks          |Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------------|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gpqa_diamond_cot_zeroshot|      1|flexible-extract|     0|exact_match|↑  |0.2929|±  |0.0324|
+|                         |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
+
+************************************normal(thinking_30000 CONTEXT)***********************************
+openai-chat-completions ({'model': 'deepseek-ai/DeepSeek-V3.2:novita', 'base_url': 'https://router.huggingface.co/v1/chat/completions', 'num_concurrent': 3, 'max_length': 30000, 'temperature': 0.0, 'extra_body': {'chat_template_kwargs': {'thinking': True}}}), gen_kwargs: ({}), limit: None, num_fewshot: None, batch_size: 1
+|          Tasks          |Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------------|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gpqa_diamond_cot_zeroshot|      1|flexible-extract|     0|exact_match|↑  |0.2879|±  |0.0323|
+|                         |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
